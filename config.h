@@ -79,11 +79,13 @@ static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,   "-fn", dmenufont,  "-nb", mocha_base, "-nf",
     mocha_text,  "-sb", mocha_text, "-sf", mocha_base, "-p",  "Enter: ",  NULL};
 static const char *termcmd[] = {"st", NULL};
+static const char *flameshotcmd[] = {"st", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
+    {MODKEY | ShiftMask, XK_s, spawn, {.v = flameshotcmd}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
