@@ -31,7 +31,8 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+static const char *tags[] = {"󰇧 ", " ", " ", " ", " ",
+                             "󰝚 ", " ", " ", "󰌾 "};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -79,13 +80,15 @@ static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,   "-fn", dmenufont,  "-nb", mocha_base, "-nf",
     mocha_text,  "-sb", mocha_text, "-sf", mocha_base, "-p",  "Enter: ",  NULL};
 static const char *termcmd[] = {"st", NULL};
-static const char *flameshotcmd[] = {"st", NULL};
+static const char *flameshotcmd[] = {"flameshot", "gui", NULL};
+static const char *emacsclient[] = {"emacsclient", "-c", "-a", "'emacs'", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY | ShiftMask, XK_Return, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY | ShiftMask, XK_s, spawn, {.v = flameshotcmd}},
+    {MODKEY, XK_e, spawn, {.v = emacsclient}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
