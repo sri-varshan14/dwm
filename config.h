@@ -79,7 +79,7 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",  dmenumon,   "-fn", dmenufont,  "-nb", mocha_base, "-nf",
     mocha_text,  "-sb", mocha_text, "-sf", mocha_base, "-p",  "Enter: ",  NULL};
-static const char *termcmd[] = {"st", NULL};
+static const char *termcmd[] = {"alacritty", NULL};
 static const char *flameshotcmd[] = {"flameshot", "gui", NULL};
 static const char *emacsclient[] = {"emacsclient", "-c", "-a", "'emacs'", NULL};
 
